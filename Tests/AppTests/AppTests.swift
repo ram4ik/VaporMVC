@@ -9,7 +9,7 @@ final class AppTests: XCTestCase {
 
         try app.test(.GET, "users", afterResponse: { res in
             XCTAssertEqual(res.status, .ok)
-            XCTAssertEqual(res.body.string, "All Users")
+            XCTAssertEqual(res.body.string, "[{\"name\":\"User1\"},{\"name\":\"User2\"}]")
         })
     }
     
