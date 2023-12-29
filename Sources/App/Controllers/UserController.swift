@@ -19,8 +19,11 @@ struct UserController: RouteCollection {
         }
     }
     
-    func getAllUsers(request: Request) throws -> [[String: String]] {
-        return [["name": "User1"], ["name": "User2"]]
+    func getAllUsers(request: Request) throws -> [User] {
+        let address =  Address(street: "Road 8", state: "USA", zip: "20620")
+        let users = [User(name: "User1", age: 32, address: address)]
+        
+        return users
     }
     
     func show(request: Request) throws -> String {
